@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-
+    datetimepicker/5.3.0/js/bootstrap-datetimepicker.min.js"
+    />
   </head>
   <body>
     <h1>Calculate a preventive</h1>
@@ -25,18 +29,19 @@
       />
       <label for="floatingPassword">Full name</label>
     </div>
-    <div class="form-check form-switch">
+    <div class="form-check form-switch m-3">
       <input
         class="form-check-input"
         type="checkbox"
         role="switch"
-        id="flexSwitchCheckDefault"
+        id="flexSwitchCheckChecked"
+        checked
       />
-      <label class="form-check-label" for="flexSwitchCheckDefault"
-        >Domain needed</label
+      <label class="form-check-label" for="flexSwitchCheckChecked"
+        >When it is on, domain is needed</label
       >
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -47,7 +52,7 @@
         Static page
       </label>
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -59,7 +64,7 @@
         CMS (Content Management System)
       </label>
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -69,7 +74,7 @@
       />
       <label class="form-check-label" for="flexRadioDefault2"> E-Shop </label>
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -81,7 +86,7 @@
         Gestional
       </label>
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -93,7 +98,7 @@
         IOT (Internet of Things)
       </label>
     </div>
-    <div class="form-check">
+    <div class="form-check ms-3">
       <input
         class="form-check-input"
         type="radio"
@@ -105,5 +110,15 @@
         AI (Artificial Intelligence)
       </label>
     </div>
+    <section class="container p-3">
+      <form class="row">
+        <label for="date" class="col-1 col-form-label">Date</label>
+        <div class="col-5">
+          <div class="input-group date">
+            <input type="date" class="form-control" id="date" />
+          </div>
+        </div>
+      </form>
+    </section>
   </body>
 </html>
