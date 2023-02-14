@@ -96,7 +96,9 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/Carousel.js" 
+              "jquery-1.10.2.js",
+              "bootstrap.js",
+              "../../assets/Carousel.js"
            ]
           }
         }
