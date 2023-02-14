@@ -9,6 +9,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { PreventiveComponent } from './preventive/preventive.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
     HomeComponent,
     ContactUsComponent,
+    PreventiveComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
