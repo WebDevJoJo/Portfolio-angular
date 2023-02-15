@@ -1,15 +1,15 @@
 function priceCalculate() {
-  const radiochecked = document.getElementById("flexRadioTypeId").checked;
   const inputs = document.getElementsByClassName("form-check-input");
   const arr = []; // Array to store the checked values
+  const mytext=document.getElementById('TotText');
   for (let i = 0; i < inputs.length; i++) {
-    // Take only those inputs which are checkbox
     if (inputs[i].checked) {
-      arr.push(inputs[i].value);
+      arr.push(parseInt(inputs[i].value));
+      console.log(inputs[i].value);
     }
   }
-  document.getElementById("TotText").value = arr.reduce(sumcalc);
+  mytext.className="visible"; 
+  let tot=parseInt(arr.reduce((accumulator,currentValue)=>accumulator+currentValue,0))
+ mytext.value = tot;
 }
-function sumcalc(tot) {
-  return tot;
-}
+
