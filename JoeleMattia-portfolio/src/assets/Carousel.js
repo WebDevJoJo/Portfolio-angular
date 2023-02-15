@@ -8,5 +8,5 @@ function priceCalculate() {
     }
   }
   mytext.className = "visible";
-  mytext.value =arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  mytext.value ="Everything will cost "+arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
