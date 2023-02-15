@@ -10,7 +10,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { PreventiveComponent } from './preventive/preventive.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import { PreventiveComponent } from './preventive/preventive.component';
     ContactUsComponent,
     PreventiveComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
