@@ -190,14 +190,16 @@
           <button
             type="button"
             (click)="priceCalculate()"
-            class="btn btn-outline-light"
+            class="btn btn-outline-light mb-3"
           >
             Calculate
           </button>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <textarea id="TotText" class="invisible w-25" readonly></textarea>
+      <div class="row">
+        <div class="col text-center">
+          <textarea id="TotText" class="invisible" readonly></textarea>
+        </div>
       </div>
     </div>
     <!--Calculate price function-->
