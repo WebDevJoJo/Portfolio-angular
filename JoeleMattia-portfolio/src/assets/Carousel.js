@@ -8,8 +8,5 @@ function priceCalculate() {
     }
   }
   mytext.className = "visible";
-  let tot = parseInt(
-    arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-  );
-  mytext.value = tot;
+  mytext.value =arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
