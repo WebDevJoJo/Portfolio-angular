@@ -51,6 +51,7 @@
             type="checkbox"
             role="switch"
             id="flexSwitchCheckChecked"
+            value="50"
             checked
           />
           <label class="form-check-label" for="flexSwitchCheckChecked"
@@ -63,7 +64,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId1"
+            value="50"
             checked
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -75,7 +77,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId2"
+            value="100"
           />
           <label class="form-check-label" for="flexRadioDefault">
             CMS (Content Management System)
@@ -86,7 +89,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId3"
+            value="150"
           />
           <label class="form-check-label" for="flexRadioDefault">
             E-Shop
@@ -97,7 +101,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId4"
+            value="200"
           />
           <label class="form-check-label" for="flexRadioDefault">
             Gestional
@@ -108,7 +113,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId5"
+            value="250"
           />
           <label class="form-check-label" for="flexRadioDefault">
             IOT (Internet of Things)
@@ -119,7 +125,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioTypeof"
-            id="flexRadioTypeId"
+            id="flexRadioTypeId6"
+            value="300"
           />
           <label class="form-check-label" for="flexRadioDefault">
             AI (Artificial Intelligence)
@@ -133,7 +140,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioMantain"
-            id="flexRadioMantainId"
+            id="flexRadioMantainId1"
+            value="0"
             checked
           />
           <label class="form-check-label" for="flexRadioDefault">None</label>
@@ -143,7 +151,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioMantain"
-            id="flexRadioMantainId"
+            id="flexRadioMantainId2"
+            value="50"
           />
           <label class="form-check-label" for="flexRadioDefault">
             1 Month
@@ -154,7 +163,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioMantain"
-            id="flexRadioMantainId"
+            id="flexRadioMantainId3"
+            value="100"
           />
           <label class="form-check-label" for="flexRadioDefault">
             6 Months
@@ -165,7 +175,8 @@
             class="form-check-input"
             type="radio"
             name="flexRadioMantain"
-            id="flexRadioMantainId"
+            id="flexRadioMantainId4"
+            value="150"
           />
           <label class="form-check-label" for="flexRadioDefault">
             12 Months
@@ -176,9 +187,18 @@
     <div class="container">
       <div class="row text-center">
         <div class="col">
-          <button type="button" class="btn btn-outline-light">Calculate</button>
+          <button
+            type="button"
+            (click)="priceCalculate()"
+            class="btn btn-outline-light"
+          >
+            Calculate
+          </button>
         </div>
       </div>
     </div>
+    <textarea id="TotText" readonly></textarea>
+    <!--Calculate price function-->
+    <script src="/JoeleMattia-portfolio/src/assets/Carousel.js"></script>
   </body>
 </html>
