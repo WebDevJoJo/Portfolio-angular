@@ -4,9 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { CarouselComponent } from './carousel/carousel.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { PreventiveComponent } from './preventive/preventive.component';
@@ -15,9 +14,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavbarComponent,
-    AboutusComponent,
+    AboutUsComponent,
     PortfolioComponent,
-    CarouselComponent,
     FooterComponent,
     HomeComponent,
     ContactUsComponent,
