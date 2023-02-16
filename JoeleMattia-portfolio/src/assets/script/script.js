@@ -8,7 +8,12 @@ function priceCalculate() {
     }
   }
   mytext.className = "visible";
+<<<<<<< Updated upstream:JoeleMattia-portfolio/src/assets/script/script.js
   mytext.value =
     "It will cost € " +
     arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
+=======
+  mytext.value ="It will cost € "+arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+>>>>>>> Stashed changes:JoeleMattia-portfolio/src/assets/Carousel.js
