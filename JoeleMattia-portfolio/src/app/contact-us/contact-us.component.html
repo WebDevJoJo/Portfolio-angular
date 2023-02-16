@@ -6,58 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="container-fluid text-center mt-5 p-5">
-      <div class="row mt-5 p-5">
-        <h1>Contact Us</h1>
-        <aside class="col m-5">
-          <p class="fs-4">Do you want to know how we or the web works?</p>
-          <p class="fs-4">
-            Do you have any ideas or suggestions for us or our site?
-          </p>
-          <p class="fs-4">
-            You had a project in mind for a while and you would like to see it
-            done so that everyone can see and use it?
-          </p>
-          <p class="fs-4">
-            Send us a message by writing it below, together with your email
-            address.
-          </p>
-          <p class="fw-bold fs-4">We'll answer you very soon!</p>
-        </aside>
+    <div class="container-fluid text-center my-5 pt-5">
+      <h1 class="m-5 p-5">Contact Us</h1>
+      <div class="container">
+        <p class="fs-5">Do you want to know how we or the web works?</p>
+        <p class="fs-5">
+          Do you have any ideas or suggestions for us or our site?
+        </p>
+        <p class="fs-5">
+          You had a project in mind for a while and you would like to see it
+          done so that everyone can see and use it?
+        </p>
+        <p class="fs-5">
+          Send us a message by writing it below, together with your email
+          address.
+        </p>
+        <p class="fw-bold fs-4">We'll answer you very soon!</p>
+
+        <div class="row">
+          <div class="col">
+            <div class="input-group my-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="username"
+                aria-label="Username"
+              />
+              <span class="input-group-text">@</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="server.domain"
+                aria-label="Server"
+              />
+            </div>
+            <form class="form-floating my-2">
+              <input
+                class="form-control"
+                id="floatingInputValue"
+                placeholder="Request"
+              />
+              <label for="floatingInputValue">Subject of the text</label>
+            </form>
+            <div class="input-group my-2">
+              <span class="input-group-text">Message</span>
+              <textarea
+                class="form-control"
+                aria-label="With textarea"
+                placeholder="write your message here"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Send</button>
+          </div>
+        </div>
       </div>
-      <div class="input-group mb-4">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="username"
-          aria-label="Username"
-        />
-        <span class="input-group-text">@</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="server.domain"
-          aria-label="Server"
-        />
-      </div>
-      <form class="form-floating mb-3">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInputValue"
-          placeholder="Request"
-        />
-        <label for="floatingInputValue">Subject of the text</label>
-      </form>
-      <div class="input-group mb-3">
-        <span class="input-group-text">Message</span>
-        <textarea
-          class="form-control"
-          aria-label="With textarea"
-          placeholder="write your message here"
-        ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send</button>
     </div>
   </body>
 </html>
