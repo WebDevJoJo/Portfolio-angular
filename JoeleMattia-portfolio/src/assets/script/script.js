@@ -30,3 +30,7 @@ function priceCalculate() {
     "It will cost € " +
     arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
+function printmodal() {
+  const modal = document.getElementById("printmodal");
+  modal.className = "visible";
+}
