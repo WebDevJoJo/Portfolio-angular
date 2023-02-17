@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent {
-
+  ngOnChanges():void{
+    this.showinfo();
+  }
+  showinfo(){
+    const copyhere=<HTMLCollection>document.getElementsByClassName("form-control")
+    const printhere=<HTMLElement>document.getElementById("printhere");
+    for(let i=0;i<copyhere.length;i++)
+    {
+      printhere.innerHTML+=copyhere.item(i)?.innerHTML;
+      console.log(copyhere.item(i)?.innerHTML);
+    }
+  }
 }
