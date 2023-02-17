@@ -7,7 +7,15 @@ function eshopMethods() {
     gimmemoney.className = "invisible";
   }
 }
-
+function ShowUrl() {
+  const switcheck = document.getElementById("flexSwitchCheckChecked");
+  const url = document.getElementById("chooseurl");
+  if (switcheck.checked) {
+    url.className = "visible";
+  } else {
+    url.className = "invisible";
+  }
+}
 function priceCalculate() {
   const inputs = document.getElementsByClassName("form-check-input");
   const arr = []; // Array to store the checked values

@@ -11,4 +11,7 @@ export class PreventiveComponent {
   eshopMethods() {
     new eshopMethods();
   }
+  ShowUrl() {
+    new ShowUrl();
+  }
 }
