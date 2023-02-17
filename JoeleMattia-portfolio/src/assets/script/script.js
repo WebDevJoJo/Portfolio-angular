@@ -1,3 +1,13 @@
+function eshopMethods() {
+  const eshop = document.getElementById("eshop");
+  const gimmemoney = document.getElementById("gimmemoney");
+  if (eshop.checked) {
+    gimmemoney.className = "visible";
+  } else {
+    gimmemoney.className = "invisible";
+  }
+}
+
 function priceCalculate() {
   const inputs = document.getElementsByClassName("form-check-input");
   const arr = []; // Array to store the checked values
