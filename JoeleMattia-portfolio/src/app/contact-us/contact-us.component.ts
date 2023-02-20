@@ -10,12 +10,17 @@ export class ContactUsComponent {
     this.showinfo();
   }
   showinfo(){
-    const copyhere=<HTMLCollection>document.getElementsByClassName("form-control")
+    const copyhere=(<HTMLInputElement[]><unknown>document.getElementsByClassName("form-control"));
     const printhere=<HTMLElement>document.getElementById("printhere");
-    for(let i=0;i<copyhere.length;i++)
+    for(let i:number=0;i<copyhere.length;i++)
     {
-      printhere.innerHTML+=copyhere.item(i)?.innerHTML;
-      console.log(copyhere.item(i)?.innerHTML);
+      if(copyhere[i].value!="")
+      {
+        printhere.innerHTML+=copyhere[i].value+" ";
+      }
+      else if(copyhere[i].value==""){
+        printhere.innerHTML="Ma non hai scritto nulla, ti svegli???";
+      }
     }
   }
 }
