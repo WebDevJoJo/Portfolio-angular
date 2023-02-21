@@ -1,42 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
+import { NgModel, NgModelGroup } from '@angular/forms';
 @Component({
   selector: 'app-preventive',
   templateUrl: './preventive.component.html',
   styleUrls: ['./preventive.component.scss'],
+  template:
+  `
+    datacheck: {{datacheck}}
+  `
 })
 export class PreventiveComponent {
-  ngOnChanges() {
-    this.priceCalculate();
-    this.eshopMethods();
-    this.ShowUrl();
-  }
-  priceCalculate() {
-    const inputs = <HTMLInputElement[]>(
-      (<unknown>document.getElementsByClassName('form-check-input'))
-    );
-    const arr = []; // Array to store the checked values
-    const mytext = <HTMLInputElement>document.getElementById('TotText');
-    const email = <HTMLInputElement>document.getElementById('floatingInput');
-    const password = <HTMLInputElement>(
-      document.getElementById('floatingPassword')
-    );
-    if (email.value != '' && password.value != '') {
-      for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].checked) {
-          arr.push(parseInt(inputs[i].value));
-        }
-      }
-      mytext.className = 'visible';
-      mytext.value =
-        'It will cost € ' +
-        arr.reduce(
-          (accumulator, currentValue) => accumulator + currentValue,
-          0
-        );
-    } else if (email.value == '' || password.value == '') {
-      alert('Wei, ciccio, guarda che devi identificarti');
-    }
-  }
+// constructor(
+//   @Input("ngInput") datacheck:string;
+// )
+//   ngOnChanges() {
+//     this.eshopMethods();
+//     this.ShowUrl();
+//   }
+//   priceCalculate(datacheck:string) {
+//     const arr = []; // Array to store the checked values
+//     const mytext = <HTMLInputElement>document.getElementById('TotText');
+//     const email = <HTMLInputElement>document.getElementById('floatingInput');
+//     const password = <HTMLInputElement>(
+//       document.getElementById('floatingPassword')
+//     );
+//     if (datacheck!="") {
+//       console.log("lol");
+//       // for (let i = 0; i < datacheck.length; i++) {
+//       //   if (datacheck[i].checked) {
+//       //     arr.push(this.datacheck[i].value);
+//       //   }
+//       }
+//     //   mytext.className = 'visible';
+//     //   mytext.value =
+//     //     'It will cost € ' +
+//     //     arr.reduce(
+//     //       (accumulator, currentValue) => accumulator + currentValue,
+//     //       0
+//     //     );
+//     // } else if (email.value == '' || password.value == '') {
+//     //   alert('Wei, ciccio, guarda che devi identificarti');
+//     // }
+//   }
+clicked:boolean=false;
+//arr = []; 
+priceCalculate(myvalue:any){
+  this.clicked=true;
+ console.log(myvalue);
+}
   eshopMethods() {
     const eshop = <HTMLInputElement>document.getElementById('eshop');
     const gimmemoney = <HTMLInputElement>document.getElementById('gimmemoney');

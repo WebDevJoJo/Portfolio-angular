@@ -10,6 +10,7 @@
             class="form-control text-dark"
             id="floatingInput"
             placeholder="name@example.com"
+            #datacheck
           />
           <label for="floatingInput">Email address</label>
         </div>
@@ -17,7 +18,7 @@
           <input
             class="form-control text-dark"
             id="floatingPassword"
-            placeholder="Marco Rossi"
+            #datacheck
           />
           <label for="floatingPassword">Full name</label>
         </div>
@@ -41,13 +42,14 @@
             id="flexSwitchCheckChecked"
             value="50"
             checked
+            #formcheckinput
             (click)="ShowUrl()"
           />
           <label class="form-check-label" for="flexSwitchCheckChecked"
             >When it is on, domain is needed</label
           >
         </div>
-        <div class="mb-5 visible" id="chooseurl">
+        <div class="mb-5" id="chooseurl">
           <label for="basic-url" class="form-label">Choose an URL</label>
           <div class="input-group">
             <span class="input-group-text" id="basic-addon3">https://</span>
@@ -73,6 +75,7 @@
             id="flexRadioTypeId"
             (click)="eshopMethods()"
             value="1"
+            #formcheckinput
             checked
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -86,6 +89,7 @@
             name="flexRadioTypeof"
             id="flexRadioTypeId"
             (click)="eshopMethods()"
+            #formcheckinput
             value="100"
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -244,7 +248,7 @@
       <div class="col">
         <button
           type="button"
-          (click)="priceCalculate()"
+          (click)="priceCalculate(form-check-input)"
           class="btn btn-outline-light"
         >
           Calculate
@@ -253,7 +257,7 @@
     </div>
     <div class="row">
       <div class="col text-center">
-        <textarea id="TotText" class="invisible" readonly></textarea>
+        <textarea id="TotText" [ngClass]="clicked? 'visible':'invisible' " readonly *ngFor="let tmp of #formcheckinput"> <span *ngIf="datacheck.value!='' && #formcheckinput.checked">{{tmp}} </span></textarea>
       </div>
     </div>
   </div>
