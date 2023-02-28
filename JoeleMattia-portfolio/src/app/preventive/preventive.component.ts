@@ -35,51 +35,44 @@ datacheck : any;
 clicked:boolean=false;
 tmparray:number[]=[];
 urlmodel:boolean=true;
-fullname!: string;
-email!:string;
-type:string="1";
-Manteinance:string="0";
-priceCalculate(myvalue:any[]){
-  this.clicked=true;
-  if(this.email!="" && this.fullname!="")
+fullname: any;
+email:any;
+type:any="50";
+Manteinance:any="0";
+showthis:boolean=false;
+date:any;
+urltocalc:any=50;
+result:number=0;
+urlgroup:string[]= ['www.pippo.it', 'wwww.lol.it', 'www.xd.com'];
+checkthis:string="";
+priceCalculate(){
+  if(this.email && this.fullname && this.date)
   {
-    for (let i = 0; i < myvalue.length; i++) {
-            if (myvalue[i].checked) {
-              this.tmparray.push(myvalue[i].value);
-            }
+    this.clicked=true;
+    if(this.urltocalc!=50){
+      this.urltocalc=0;
     }
+      this.tmparray.push(parseInt(this.type),parseInt(this.urltocalc), parseInt(this.Manteinance));
+      this.result=this.tmparray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      this.tmparray=[];
+  }
+  else{
+    alert("nooooh");
   }
 }
   eshopMethods() {
-    const eshop = <HTMLInputElement>document.getElementById('eshop');
-    const gimmemoney = <HTMLInputElement>document.getElementById('gimmemoney');
-    if (eshop.checked) {
-      gimmemoney.className = 'visible';
-    } else {
-      gimmemoney.className = 'invisible';
-    }
+    this.showthis=true;
   }
-  ShowUrl() {
-    const switcheck = <HTMLInputElement>(
-      document.getElementById('flexSwitchCheckChecked')
-    );
-    const url = <HTMLElement>document.getElementById('chooseurl');
-    if (switcheck.checked) {
-      url.className = 'visible';
-    } else {
-      url.className = 'invisible';
-    }
+  hideEshop(){
+    this.showthis=false;
   }
-  Check() {
-    const url = (<HTMLInputElement>(
-      (<unknown>document.getElementById('basic-url'))
-    )).value;
-    const urlgroup = ['www.pippo.it', 'wwww.lol.it', 'www.xd.com'];
-    if (urlgroup.includes(url)) {
+  CheckUrl() {
+    
+    if (this.urlgroup.includes(this.checkthis)) {
       alert('Il link non è disponibile');
-    } else if (url == '') {
+    } else if (this.checkthis == '') {
       alert('Ciccio, guarda che il campo è vuoto');
-    } else if (!urlgroup.includes(url)) {
+    } else if (!this.urlgroup.includes(this.checkthis)) {
       alert('è disponibileh');
     }
   }
