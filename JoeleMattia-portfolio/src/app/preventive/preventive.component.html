@@ -18,6 +18,7 @@
           <input
             class="form-control text-dark"
             id="floatingPassword"
+            placeholder="name"
             [(ngModel)]="fullname"
           />
           <label for="floatingPassword">Full name</label>
@@ -27,7 +28,12 @@
             <label for="date" class="col-form-label text-light">Date</label>
             <div class="col-8">
               <div class="input-group date">
-                <input name="date" type="date" class="form-control text-dark" [(ngModel)]="date"/>
+                <input
+                  name="date"
+                  type="date"
+                  class="form-control text-dark"
+                  [(ngModel)]="date"
+                />
               </div>
             </div>
           </form>
@@ -44,6 +50,7 @@
             [(ngModel)]="urlmodel"
             [(ngModel)]="urltocalc"
           />
+          {{ urlmodel }}-{{ urltocalc }}
           <label class="form-check-label" for="flexSwitchCheckChecked"
             >When it is on, domain is needed</label
           >
@@ -62,7 +69,11 @@
               [(ngModel)]="checkthis"
             />
           </div>
-          <button type="button" (click)="CheckUrl()" class="btn btn-outline-light">
+          <button
+            type="button"
+            (click)="CheckUrl()"
+            class="btn btn-outline-light"
+          >
             Check
           </button>
         </div>
@@ -257,13 +268,16 @@
           type="button"
           (click)="priceCalculate()"
           class="btn btn-outline-light"
-        > Calculate
+        >
+          Calculate
         </button>
       </div>
     </div>
     <div class="row">
       <div class="col text-center">
-        <textarea id="TotText" [class.invisible]="!clicked" readonly>It will cost € {{result}} </textarea>
+        <textarea id="TotText" [class.invisible]="!clicked" readonly>
+It will cost € {{ result }} </textarea
+        >
       </div>
     </div>
   </div>
