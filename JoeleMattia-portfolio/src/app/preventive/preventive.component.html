@@ -10,7 +10,7 @@
             class="form-control text-dark"
             id="floatingInput"
             placeholder="name@example.com"
-            #datacheck
+            [ngModel]="email"
           />
           <label for="floatingInput">Email address</label>
         </div>
@@ -18,7 +18,7 @@
           <input
             class="form-control text-dark"
             id="floatingPassword"
-            #datacheck
+            [ngModel]="fullname"
           />
           <label for="floatingPassword">Full name</label>
         </div>
@@ -42,7 +42,7 @@
             id="flexSwitchCheckChecked"
             value="50"
             checked
-            #formcheckinput
+            [(ngModel)]="urlmodel"
             (click)="ShowUrl()"
           />
           <label class="form-check-label" for="flexSwitchCheckChecked"
@@ -73,10 +73,8 @@
             type="radio"
             name="flexRadioTypeof"
             id="flexRadioTypeId"
-            (click)="eshopMethods()"
             value="1"
-            #formcheckinput
-            checked
+            [(ngModel)]="type"
           />
           <label class="form-check-label" for="flexRadioDefault">
             Static page
@@ -88,8 +86,7 @@
             type="radio"
             name="flexRadioTypeof"
             id="flexRadioTypeId"
-            (click)="eshopMethods()"
-            #formcheckinput
+            [(ngModel)]="type"
             value="100"
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -104,6 +101,7 @@
             id="flexRadioTypeId"
             id="eshop"
             value="150"
+            [(ngModel)]="type"
             (click)="eshopMethods()"
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -116,7 +114,7 @@
             type="radio"
             name="flexRadioTypeof"
             id="flexRadioTypeId"
-            (click)="eshopMethods()"
+            [(ngModel)]="type"
             value="200"
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -129,7 +127,7 @@
             type="radio"
             name="flexRadioTypeof"
             id="flexRadioTypeId"
-            (click)="eshopMethods()"
+            [(ngModel)]="type"
             value="250"
           />
           <label class="form-check-label" for="flexRadioDefault">
@@ -142,8 +140,9 @@
             type="radio"
             name="flexRadioTypeof"
             id="flexRadioTypeId"
-            (click)="eshopMethods()"
+            [(ngModel)]="type"
             value="300"
+            
           />
           <label class="form-check-label" for="flexRadioDefault">
             AI (Artificial Intelligence)
@@ -159,6 +158,7 @@
             name="flexRadioMantain"
             id="flexRadioMantainId1"
             value="0"
+            [(ngModel)]="Manteinance"
             checked
           />
           <label class="form-check-label" for="flexRadioDefault">None</label>
@@ -170,6 +170,7 @@
             name="flexRadioMantain"
             id="flexRadioMantainId2"
             value="50"
+            [(ngModel)]="Manteinance"
           />
           <label class="form-check-label" for="flexRadioDefault">
             1 Month
@@ -182,6 +183,7 @@
             name="flexRadioMantain"
             id="flexRadioMantainId3"
             value="100"
+            [(ngModel)]="Manteinance"
           />
           <label class="form-check-label" for="flexRadioDefault">
             6 Months
@@ -194,6 +196,7 @@
             name="flexRadioMantain"
             id="flexRadioMantainId4"
             value="150"
+            [(ngModel)]="Manteinance"
           />
           <label class="form-check-label" for="flexRadioDefault">
             12 Months
@@ -207,6 +210,7 @@
               type="checkbox"
               value="10"
               id="flexCheck"
+              [(ngModel)]="datacheck"
             />
             <label class="form-check-label" for="flexCheck">Card</label>
           </div>
@@ -216,6 +220,7 @@
               type="checkbox"
               value="10"
               id="flexCheck"
+              [(ngModel)]="datacheck"
             />
             <label class="form-check-label" for="flexCheck"
               >Cash on delivery</label
@@ -227,6 +232,7 @@
               type="checkbox"
               value="10"
               id="flexCheck"
+              [(ngModel)]="datacheck"
             />
             <label class="form-check-label" for="flexCheck">Voucher</label>
           </div>
@@ -236,6 +242,7 @@
               type="checkbox"
               value="10"
               id="flexCheck"
+              [(ngModel)]="datacheck"
             />
             <label class="form-check-label" for="flexCheck">Account</label>
           </div>
@@ -248,16 +255,15 @@
       <div class="col">
         <button
           type="button"
-          (click)="priceCalculate(form-check-input)"
+          (click)="priceCalculate(datacheck)"
           class="btn btn-outline-light"
-        >
-          Calculate
+        > Calculate
         </button>
       </div>
     </div>
     <div class="row">
       <div class="col text-center">
-        <textarea id="TotText" [ngClass]="clicked? 'visible':'invisible' " readonly *ngFor="let tmp of #formcheckinput"> <span *ngIf="datacheck.value!='' && #formcheckinput.checked">{{tmp}} </span></textarea>
+        <textarea id="TotText" [class.invisible]="!clicked" readonly> </textarea>
       </div>
     </div>
   </div>

@@ -1,22 +1,10 @@
 import { Component, ElementRef, Input } from '@angular/core';
-import { NgModel, NgModelGroup } from '@angular/forms';
 @Component({
   selector: 'app-preventive',
   templateUrl: './preventive.component.html',
   styleUrls: ['./preventive.component.scss'],
-  template:
-  `
-    datacheck: {{datacheck}}
-  `
 })
 export class PreventiveComponent {
-// constructor(
-//   @Input("ngInput") datacheck:string;
-// )
-//   ngOnChanges() {
-//     this.eshopMethods();
-//     this.ShowUrl();
-//   }
 //   priceCalculate(datacheck:string) {
 //     const arr = []; // Array to store the checked values
 //     const mytext = <HTMLInputElement>document.getElementById('TotText');
@@ -42,11 +30,25 @@ export class PreventiveComponent {
 //     //   alert('Wei, ciccio, guarda che devi identificarti');
 //     // }
 //   }
+
+datacheck : any; 
 clicked:boolean=false;
-//arr = []; 
-priceCalculate(myvalue:any){
+tmparray:number[]=[];
+urlmodel:boolean=true;
+fullname!: string;
+email!:string;
+type:string="1";
+Manteinance:string="0";
+priceCalculate(myvalue:any[]){
   this.clicked=true;
- console.log(myvalue);
+  if(this.email!="" && this.fullname!="")
+  {
+    for (let i = 0; i < myvalue.length; i++) {
+            if (myvalue[i].checked) {
+              this.tmparray.push(myvalue[i].value);
+            }
+    }
+  }
 }
   eshopMethods() {
     const eshop = <HTMLInputElement>document.getElementById('eshop');
