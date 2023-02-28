@@ -5,31 +5,6 @@ import { Component, ElementRef, Input } from '@angular/core';
   styleUrls: ['./preventive.component.scss'],
 })
 export class PreventiveComponent {
-//   priceCalculate(datacheck:string) {
-//     const arr = []; // Array to store the checked values
-//     const mytext = <HTMLInputElement>document.getElementById('TotText');
-//     const email = <HTMLInputElement>document.getElementById('floatingInput');
-//     const password = <HTMLInputElement>(
-//       document.getElementById('floatingPassword')
-//     );
-//     if (datacheck!="") {
-//       console.log("lol");
-//       // for (let i = 0; i < datacheck.length; i++) {
-//       //   if (datacheck[i].checked) {
-//       //     arr.push(this.datacheck[i].value);
-//       //   }
-//       }
-//     //   mytext.className = 'visible';
-//     //   mytext.value =
-//     //     'It will cost € ' +
-//     //     arr.reduce(
-//     //       (accumulator, currentValue) => accumulator + currentValue,
-//     //       0
-//     //     );
-//     // } else if (email.value == '' || password.value == '') {
-//     //   alert('Wei, ciccio, guarda che devi identificarti');
-//     // }
-//   }
 clicked:boolean=false;
 tmparray:number[]=[];
 urlmodel:boolean=true;
