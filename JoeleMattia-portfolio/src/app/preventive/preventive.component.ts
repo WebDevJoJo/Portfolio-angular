@@ -30,8 +30,6 @@ export class PreventiveComponent {
 //     //   alert('Wei, ciccio, guarda che devi identificarti');
 //     // }
 //   }
-
-datacheck : any; 
 clicked:boolean=false;
 tmparray:number[]=[];
 urlmodel:boolean=true;

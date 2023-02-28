@@ -22,7 +22,8 @@
       class="form-control"
       placeholder="username"
       aria-label="Username"
-      id="username"
+      name="username"
+      [(ngModel)]="username"
     />
     <span class="input-group-text">@</span>
     <input
@@ -30,6 +31,8 @@
       class="form-control"
       placeholder="server.domain"
       aria-label="Server"
+      name="domain"
+      [(ngModel)]="domain"
     />
   </div>
   <form class="form-floating mb-3">
@@ -38,6 +41,8 @@
       class="form-control"
       id="floatingInputValue"
       placeholder="Request"
+      name="Subject"
+      [(ngModel)]="Subject"
     />
     <label for="floatingInputValue">Subject of the text</label>
   </form>
@@ -47,6 +52,8 @@
       class="form-control"
       aria-label="With textarea"
       placeholder="write your message here"
+      name="txtfromuser"
+      [(ngModel)]="txtfromuser"
     ></textarea>
   </div>
   <!-- Button trigger modal -->
@@ -82,7 +89,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <div id="printhere"></div>
+         {{messaggio}}
         </div>
         <div class="modal-footer">
           <button

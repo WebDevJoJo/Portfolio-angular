@@ -6,20 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent {
-  ngOnChanges(): void {
-    this.showinfo();
-  }
+  messaggio:string="";
+  username:string="";
+  domain:string="";
+  Subject:string="";
+  txtfromuser:string="";
   showinfo() {
-    const copyhere = <HTMLInputElement[]>(
-      (<unknown>document.getElementsByClassName('form-control'))
-    );
-    const printhere = <HTMLElement>document.getElementById('printhere');
-    for (let i: number = 0; i < copyhere.length; i++) {
-      if (copyhere[i].value != '') {
-        printhere.innerHTML += copyhere[i].value + ' ';
-      } else if (copyhere[i].value == '') {
-        printhere.innerHTML = 'Ma non hai scritto nulla, ti svegli???';
+    if(this.username && this.domain && this.Subject && this.txtfromuser)
+   {
+    this.messaggio="Username: "+this.username+"@"+this.domain+" Soggetto: "+this.Subject+" Il tuo messaggio: "+this.txtfromuser;
+   } 
+    else {
+        this.messaggio='Ma non hai scritto nulla, ti svegli???';
       }
-    }
   }
 }
