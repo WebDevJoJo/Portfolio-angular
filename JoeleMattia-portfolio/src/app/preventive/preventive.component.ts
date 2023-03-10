@@ -7,27 +7,27 @@ import { Component, ElementRef, Input } from '@angular/core';
 export class PreventiveComponent {
   clicked: boolean = false;
   tmparray: number[] = [];
-  urlmodel: boolean = true;
+  urlModel: boolean = true;
   fullname: any;
   email: any;
-  type: any = '50';
-  Manteinance: any = '0';
+  productType: any = '50';
+  manteinance: any = '0';
   showthis: boolean = false;
   date: any;
-  urltocalc: any = 50;
+  urlToCalc: any = 50;
   result: number = 0;
   urlgroup: string[] = ['www.pippo.it', 'wwww.lol.it', 'www.xd.com'];
-  checkthis: string = '';
+  checkThisURL: string = '';
   priceCalculate() {
     if (this.email && this.fullname && this.date) {
       this.clicked = true;
-      if (this.urltocalc != 50) {
-        this.urltocalc = 0;
+      if (this.urlToCalc != 50) {
+        this.urlToCalc = 0;
       }
       this.tmparray.push(
-        parseInt(this.type),
-        parseInt(this.urltocalc),
-        parseInt(this.Manteinance)
+        parseInt(this.productType),
+        parseInt(this.urlToCalc),
+        parseInt(this.manteinance)
       );
       this.result = this.tmparray.reduce(
         (accumulator, currentValue) => accumulator + currentValue,
@@ -45,16 +45,13 @@ export class PreventiveComponent {
     this.showthis = false;
   }
   CheckUrl() {
-    if (this.urlgroup.includes(this.checkthis)) {
+    if (this.urlgroup.includes(this.checkThisURL)) {
       alert('Il link non è disponibile');
-    } else if (this.checkthis == '') {
+    } else if (this.checkThisURL == '') {
       alert('Ciccio, guarda che il campo è vuoto');
-    } else if (!this.urlgroup.includes(this.checkthis)) {
+    } else if (!this.urlgroup.includes(this.checkThisURL)) {
       alert('è disponibileh');
     }
-  }
-  eshopMethods() {
-    new eshopMethods();
   }
   ShowUrl() {
     new ShowUrl();
