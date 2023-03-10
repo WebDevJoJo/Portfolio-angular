@@ -1,12 +1,57 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 @Component({
   selector: 'app-preventive',
   templateUrl: './preventive.component.html',
   styleUrls: ['./preventive.component.scss'],
 })
 export class PreventiveComponent {
+  clicked: boolean = false;
+  tmparray: number[] = [];
+  urlmodel: boolean = true;
+  fullname: any;
+  email: any;
+  type: any = '50';
+  Manteinance: any = '0';
+  showthis: boolean = false;
+  date: any;
+  urltocalc: any = 50;
+  result: number = 0;
+  urlgroup: string[] = ['www.pippo.it', 'wwww.lol.it', 'www.xd.com'];
+  checkthis: string = '';
   priceCalculate() {
-    new priceCalculate();
+    if (this.email && this.fullname && this.date) {
+      this.clicked = true;
+      if (this.urltocalc != 50) {
+        this.urltocalc = 0;
+      }
+      this.tmparray.push(
+        parseInt(this.type),
+        parseInt(this.urltocalc),
+        parseInt(this.Manteinance)
+      );
+      this.result = this.tmparray.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
+      this.tmparray = [];
+    } else {
+      alert('nooooh');
+    }
+  }
+  eshopMethods() {
+    this.showthis = true;
+  }
+  hideEshop() {
+    this.showthis = false;
+  }
+  CheckUrl() {
+    if (this.urlgroup.includes(this.checkthis)) {
+      alert('Il link non è disponibile');
+    } else if (this.checkthis == '') {
+      alert('Ciccio, guarda che il campo è vuoto');
+    } else if (!this.urlgroup.includes(this.checkthis)) {
+      alert('è disponibileh');
+    }
   }
   eshopMethods() {
     new eshopMethods();

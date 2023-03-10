@@ -34,3 +34,5 @@ function printmodal() {
   const modal = document.getElementById("printmodal");
   modal.className = "visible";
 }
+  mytext.value ="Everything will cost "+arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}

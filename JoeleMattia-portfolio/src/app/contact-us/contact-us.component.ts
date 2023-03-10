@@ -6,7 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent {
-  printmodal() {
-    new printmodal();
+  message: string = '';
+  username: string = '';
+  domain: string = '';
+  subject: string = '';
+  usermessage: string = '';
+  showinfo() {
+    if (this.username && this.domain && this.subject && this.usermessage) {
+      this.message =
+        'Username: ' +
+        this.username +
+        '@' +
+        this.domain +
+        ' Subject: ' +
+        this.subject +
+        ' Message: ' +
+        this.usermessage;
+    } else {
+      this.message = 'You cannot leave this field blank';
+    }
   }
 }

@@ -12,6 +12,7 @@ import { PreventiveComponent } from './preventive/preventive.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaymentComponent } from './payment/payment.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +25,14 @@ import { PaymentComponent } from './payment/payment.component';
     PreventiveComponent,
     PaymentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    HttpClientModule,
+  ],
+  providers: [HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
