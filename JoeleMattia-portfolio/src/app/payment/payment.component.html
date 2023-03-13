@@ -4,7 +4,7 @@
     <div
       class="col my-3 myCard"
       *ngFor="let creditCard of sortedNumberArray; let i = index"
-      (click)="test(i)"
+      (click)="checkInput(i)"
     >
       <input
         class="form-check-input"
@@ -12,7 +12,7 @@
         name="creditCard"
         [checked]="creditCard.checked"
       />
-      <label class="form-check-label card" for="myCard">
+      <label class="form-check-label card" for="creditCard">
         <div class="card-body">
           <h5 class="card-title">
             <svg

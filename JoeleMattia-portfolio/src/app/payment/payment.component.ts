@@ -51,7 +51,7 @@ export class PaymentComponent implements OnInit {
       });
   }
 
-  test(index: number) {
+  checkInput(index: number) {
     for (let card of this.sortedNumberArray) {
       if (card.checked) {
         card.checked = false;
