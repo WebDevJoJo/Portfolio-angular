@@ -2,10 +2,17 @@
   <h1 class="my-5 p-5">Choose payment method</h1>
   <div class="row">
     <div
-      class="col"
+      class="col my-3"
       *ngFor="let creditCard of sortedNumberArray; let i = index"
     >
-      <div class="card">
+      <input
+        type="radio"
+        name="creditCard"
+        id="chosenCard"
+        class="radio-btn"
+        [checked]="i == 0"
+      />
+      <label class="form-check-label card" for="chosenCard">
         <div class="card-body">
           <h5 class="card-title">{{ creditCard.type }}</h5>
           <p class="card-text">{{ creditCard.number }}</p>
@@ -14,10 +21,11 @@
           <li class="list-group-item">{{ creditCard.owner }}</li>
           <li class="list-group-item">{{ creditCard.expiration }}</li>
         </ul>
-      </div>
+      </label>
     </div>
   </div>
 </div>
+
 <!-- 
 <div>
   <h4>Choose your Payment</h4>
