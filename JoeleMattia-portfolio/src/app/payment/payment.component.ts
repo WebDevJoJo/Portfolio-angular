@@ -12,6 +12,7 @@ interface creditCard {
   number: number;
   expiration: string;
   owner: string;
+  checked: boolean;
 }
 @Component({
   selector: 'app-payment',
@@ -22,10 +23,7 @@ export class PaymentComponent implements OnInit {
   NumberArray: creditCard[] = [];
   sortedNumberArray: any[] = [];
   cardArray: creditCard[] = [];
-  isHovered: boolean = false;
-  constructor(private http: HttpClient) {
-    this.isHovered = false;
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http
@@ -37,6 +35,7 @@ export class PaymentComponent implements OnInit {
             type: response.data[i].type,
             expiration: response.data[i].expiration,
             owner: response.data[i].owner,
+            checked: false,
           });
         }
         for (let i = 0; i < this.NumberArray.length; i++) {
@@ -50,5 +49,16 @@ export class PaymentComponent implements OnInit {
         }
         this.sortedNumberArray = [...this.NumberArray];
       });
+  }
+
+  test(index: number) {
+    for (let card of this.sortedNumberArray) {
+      if (card.checked) {
+        card.checked = false;
+      }
+    }
+    this.sortedNumberArray[index].checked =
+      !this.sortedNumberArray[index].checked;
+    console.log(this.sortedNumberArray);
   }
 }
