@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+let isHovered: boolean = false;
+
 interface Response {
   status: string;
   code: number;

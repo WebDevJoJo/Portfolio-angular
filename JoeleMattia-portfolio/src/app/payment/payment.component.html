@@ -5,14 +5,15 @@
       class="col my-3"
       *ngFor="let creditCard of sortedNumberArray; let i = index"
     >
-      <input
-        type="radio"
-        name="creditCard"
-        id="chosenCard"
-        class="radio-btn"
-        [checked]="i == 0"
-      />
-      <label class="form-check-label card" for="chosenCard">
+      <input class="form-check-input" type="radio" name="creditCard" checked />
+      <label
+        class="form-check-label card"
+        onmouseenter="onMouseEnter()"
+        for="checked"
+        [ngClass]="{ 'not-aspirant': !isHovered, aspirant: isHovered }"
+        (mouseover)="isHovered = true"
+        (mouseout)="isHovered = false"
+      >
         <div class="card-body">
           <h5 class="card-title">
             <svg
