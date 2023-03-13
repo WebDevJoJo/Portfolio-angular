@@ -8,8 +8,7 @@
       <input class="form-check-input" type="radio" name="creditCard" checked />
       <label
         class="form-check-label card"
-        onmouseenter="onMouseEnter()"
-        for="checked"
+        for="aspirant"
         [ngClass]="{ 'not-aspirant': !isHovered, aspirant: isHovered }"
         (mouseover)="isHovered = true"
         (mouseout)="isHovered = false"

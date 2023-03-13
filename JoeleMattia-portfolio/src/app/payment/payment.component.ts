@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let isHovered: boolean = false;
-
 interface Response {
   status: string;
   code: number;
@@ -24,7 +22,10 @@ export class PaymentComponent implements OnInit {
   NumberArray: creditCard[] = [];
   sortedNumberArray: any[] = [];
   cardArray: creditCard[] = [];
-  constructor(private http: HttpClient) {}
+  isHovered: boolean = false;
+  constructor(private http: HttpClient) {
+    this.isHovered = false;
+  }
 
   ngOnInit(): void {
     this.http
